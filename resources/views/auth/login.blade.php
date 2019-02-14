@@ -6,26 +6,28 @@
 
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header" style="font-size: 20px;">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" style=" margin-bottom: 100px; margin-top: 50px; ">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}" id="form-login">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <div style="margin: 0 auto">
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                <div class="col-md-8">
+                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-                                <span class="text-danger" id="error-login"></span> 
+                                    <span class="text-danger" id="error-login"></span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                             </div>
                         </div>
@@ -67,4 +69,5 @@
 @section('javascript')
     <script src="{{ URL::asset('js/auth/login.js') }}"></script>
 @endsection
+@include('layouts.layoutMainFooter')
 
