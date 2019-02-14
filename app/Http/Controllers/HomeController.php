@@ -28,6 +28,8 @@ class HomeController extends Controller
 
     public function test()
     {
-        return view('layouts.layoutMain');
+        // return view('layouts.layoutMain');
+        return view('home.home');
+        // return view('layouts.layoutUser');
     }
 }
