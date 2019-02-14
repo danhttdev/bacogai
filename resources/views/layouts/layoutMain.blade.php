@@ -82,10 +82,25 @@
                             <div class="header-top-right">
                                 <div class="content"><a href="#"><i class="zmdi zmdi-account"></i> My Account</a>
                                     <ul class="account-dropdown">
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="#">Log In</a></li>
-                                        <li><a href="#">Register</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        @if (!Auth::check())
+                                            <li><a href="{{ route('login') }}">Log In</a></li>
+                                            <li><a href="{{ route('register') }}">Register</a></li>
+                                        
+                                        @else
+                                            <li><a href="#">Hello {{ Auth::user()->name }}</a></li>
+                                           
+                                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                localStorage.removeItem('token');
+                                                                document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
@@ -98,7 +113,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-12">
                             <div class="logo">
-                                <a href="index-2.html"><img src="{{ asset('/template/img/logo/logo.png') }}" alt="EDUCAT"></a>
+                                <a href="/"><img src="{{ asset('/template/img/logo/logo.png') }}" alt="EDUCAT"></a>
                             </div>
                         </div>
                         <div class="col-md-9 hidden-sm hidden-xs">
@@ -143,67 +158,7 @@
                     </div>
                 </div>
             </div>  
-            <!-- Mobile Menu Area start -->
-            <div class="mobile-menu-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    <ul>
-                                        <li><a href="index-2.html">HOME</a>
-                                            <ul>
-                                                <li><a href="index-3.html">Homepage Version 2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="courses.html">Courses</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="courses-details.html">Courses Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="shop-grid.html">Shop</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="product-details.html">Product Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="event.html">Event</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="event-details.html">Event Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="index-2.html">Shortcode</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shortcode-alerts.html">Alerts</a></li>
-                                                <li><a href="shortcode-breadcrumbs.html">Breadcrumb</a></li>
-                                                <li><a href="shortcode-button.html">Button</a></li>
-                                                <li><a href="shortcode-course.html">Courses</a></li>
-                                                <li><a href="shortcode-dropdown.html">Dropdown</a></li>
-                                                <li><a href="shortcode-event.html">Event</a></li>
-                                                <li><a href="shortcode-latest-news.html">Latest News</a></li>
-                                                <li><a href="shortcode-pagination.html">Pagination</a></li>
-                                                <li><a href="shortcode-product.html">Product</a></li>
-                                                <li><a href="shortcode-facts.html">Facts</a></li>
-                                                <li><a href="shortcode-map.html">Map</a></li>
-                                                <li><a href="shortcode-contact-form.html">Contact Form</a></li>
-                                                <li><a href="shortcode-progressbar.html">Progressbar</a></li>
-                                                <li><a href="shortcode-testimonial.html">Testimonial</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="latest-news.html">Latest News</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="news-details.html">News Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                    </ul>
-                                </nav>
-                            </div>					
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile Menu Area end -->    
+          
         </header>
         <!--End of Header Area-->
             
