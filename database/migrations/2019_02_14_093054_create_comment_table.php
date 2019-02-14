@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserCourseTable extends Migration
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateUserCourseTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_course', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('id_user');
-            $table->string('id_course');
-            // $table->string('commented');
-            $table->integer('rate')->default(0);
-            $table->integer('status')->default(1);
+            $table->integer('id_course');
+            $table->string('comment');
+
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             // $table->timestamps();
@@ -34,6 +33,6 @@ class CreateUserCourseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_course');
+        Schema::dropIfExists('comment');
     }
 }

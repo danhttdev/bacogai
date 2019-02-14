@@ -17,7 +17,8 @@ class CreateCourseTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('name');
-            $table->string('description');
+            $table->string('teacher');
+            $table->text('description');
             $table->integer('status')->default(1);
 
             $table->foreign('user_id')
@@ -25,8 +26,9 @@ class CreateCourseTable extends Migration
             ->on('users')
             ->onDelete('cascade');
 
-
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            // $table->timestamps();
 
         });
     }

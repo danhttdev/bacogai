@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Course;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+        $list = Course::all();
+        // exit(json_encode($list));
+
+        return view('home.home', ["courses"=>$list]);
     }
 
     public function test()
