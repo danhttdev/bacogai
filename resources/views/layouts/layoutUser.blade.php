@@ -81,23 +81,10 @@
                         @guest
                         <div class="content"><a href="{{route('login')}}"> Đăng nhập</a>
                         </div>
-                        @else
-                            @if(\Illuminate\Support\Facades\Auth::user()->role ==2)
-
-                                <div class="content">
-                                    <i class="fa fa-bell icon-notification"></i> <span class="badge span-notification" id="badge"></span>
-                                    <ul class="account-dropdown ul-notification" id="noti-drop" >
-                                        <li class="li-notification" id="li-room" style="display: none;"><a href="javascript:void(0)"><span class="span-content-notification" id="noti-room">Bạn  hạn phòng, cần gia hạn ngay. Hạn cuối là: </span></a></li>
-                                        <li class="li-notification" id="li-bill" style="display: none;"><a href="javascript:void(0)"><span class="span-content-notification" id="noti-bill">Tiền điện tháng này là:  VNĐ bạn vẫn chưa nộp. Hạn cuối là </span></a></li>
-                                    </ul>
-                                </div>
-                            @endif
+                        
                         <div class="content"><a @if(\Illuminate\Support\Facades\Auth::user()->role <=1)href="{{route('Admin.home')}}" @endif><i class="fa fa-user"></i> {{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                            @if(\Illuminate\Support\Facades\Auth::user()->role ==2)
-                            <ul class="account-dropdown">
-                                <li><a href="{{url('profile')}}">Trang cá nhân</a></li>
-                                <li><a href="{{url('logout')}}">Đăng xuất</a></li>
-                            </ul>
+                            
                                @endif
                         </div>
                             @endif
