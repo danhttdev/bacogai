@@ -7,13 +7,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="breadcrumb-text">
-               <h1 class="text-center">COURSES DETAILS</h1>
-               <div class="breadcrumb-bar">
-                  <ul class="breadcrumb">
-                     <li><a href="#">Home</a></li>
-                     <li>COURSES DETAILS</li>
-                  </ul>
-               </div>
+               <h1 class="text-center">{{$detail->name}}</h1>
             </div>
          </div>
       </div>
@@ -35,30 +29,20 @@
                      </div>
                      <div class="col-md-6">
                         <div class="single-item-text">
-                           <h4>Tên</h4>
+                           <h4>{{$detail->name}}</h4>
                            <div class="single-item-text-info">
-                              <span>By: <span>Salim Rana</span></span>
-                              <span>Date: <span>20.5.15</span></span>
+                              <span>By: <span>{{$detail->teacher}}</span></span>
+                              <span>Date: <span>{{ date_format($detail->created_at, 'd-M-Y')}}</span></span>
                            </div>
                            <div class="course-text-content">
-                              <p>There are many varians of sages of Lorem Ipsum available, but the mrity have suffered alteration in soe orm, by injected humour,There are many buthe mri have suffered alteration in some</p>
-                              <p>but the mrity have suffered alteration in some orm, mora ekti fol ke bacabo herre many buthe mri have suffered alteration in</p>
-                           </div>
-                           <div class="single-item-content">
-                              <div class="single-item-comment-view">
-                                 <span><i class="zmdi zmdi-eye"></i>59</span>
-                                 <span><i class="zmdi zmdi-comments"></i>19</span>
-                              </div>
-                              <div class="single-item-rating">
-                                 <i class="zmdi zmdi-star"></i>
-                                 <i class="zmdi zmdi-star"></i>
-                                 <i class="zmdi zmdi-star"></i>
-                                 <i class="zmdi zmdi-star"></i>
-                                 <i class="zmdi zmdi-star-half"></i>
-                              </div>
+                              <p>{{$detail->description}}</p>
                            </div>
                            <div class="button-bottom">
-                              <a class="button-default" href="#">Buy Now</a>
+                                 @if (!Auth::check())
+                                    <a class="button-default" href="/login">Buy Now</a>
+                                 @else
+                                    <a class="button-default" href="/payment/{{$detail->id}}">Buy Now</a>
+                                 @endif
                            </div>
                         </div>
                      </div>
@@ -66,15 +50,31 @@
                </div>
                <div class="course-duration">
                   <div class="duration-title">
-                     <div class="text"><span>Lessons</span> <span class="text-right">Estimated Time</span></div>
+                     {{--  <div class="text"><span>Lessons</span> <span class="text-right">Estimated Time</span></div>  --}}
+                     <div class="text"><span>Lessons</span> <span class="text-right"></span></div>
                   </div>
-                  <div class="duration-text">
+                  {{--  <div class="duration-text">
                      <div class="text"><span>Print design</span> <span class="text-right">15 days</span></div>
                      <div class="text"><span>web design</span> <span class="text-right">10 days</span></div>
                      <div class="text"><span>apps design</span> <span class="text-right">16 days</span></div>
                      <div class="text"><span>web design</span> <span class="text-right">20 days</span></div>
                      <div class="text"><span>web design</span> <span class="text-right">22 days</span></div>
+                  </div>  --}}
+                  {{--  <video width="620" height="240" controls>
+                        <source src="{{$videos[0]->link}}" type="video/mp4">
+                  </video>  --}}
+
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/capHNO_iMIU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                  <br />
+
+                  <div class="duration-text">
+                     @foreach($videos as $key => $item)
+                        <div class="text"><span>{{$item->title}}</span> <span class="text-right"></span></div>
+                     @endforeach
+
                   </div>
+
                </div>
                <div class="comments">
                   <h4 class="title">Comments</h4>
@@ -86,13 +86,13 @@
                <div class="single-sidebar-widget">
                   <div class="tution-wrapper">
                      <div class="tution-fee">
-                        <h1>$100</h1>
+                        <h1>${{$detail->price}}</h1>
                      </div>
                      <div class="tutor-image">
-                        <img src="{{ asset('template/img/teacher/5.jpg') }}" alt="">
+                        <img src="{{ asset('template/img/teacher/none.png') }}" alt="">
                      </div>
                      <div class="single-teacher-text">
-                        <h3><a href="#">Salim Rana</a></h3>
+                        <h3><a href="#">{{$detail->teacher}}</a></h3>
                         <h4>Teacher</h4>
                         <div class="social-links">
                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>

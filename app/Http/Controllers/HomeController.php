@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Video;
 use App\Usercourse;
 class HomeController extends Controller
 {
@@ -44,6 +45,14 @@ class HomeController extends Controller
     }
 
     public function course($id){
-        return view('home.course');
+        $detail = Course::where('id', $id)->first();
+        $videos = Video::where('course_id', $id)->get();
+
+        // echo json_encode($videos);
+        return view('home.course', ['detail'=>$detail, 'videos'=>$videos]);
+    }
+
+    public function payment($id){
+        return view('home.payment');
     }
 }

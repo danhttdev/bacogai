@@ -1743,7 +1743,7 @@ span.comment-time {padding-right: 3px; position: relative;}
     position: relative;
 }
 .breadcrumb-text h1:after {
-    background: #ffffff none repeat scroll 0 0;
+    /* background: #ffffff none repeat scroll 0 0; */
     bottom: 0;
     content: "";
     height: 29px;

@@ -17,6 +17,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/course/{id}', 'HomeController@course')->name('course');
+Route::get('/payment/{id}', 'HomeController@payment')->name('payment');
 Route::get('/student', 'StudentController@index');
 
 Auth::routes();

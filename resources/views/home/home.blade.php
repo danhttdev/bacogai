@@ -85,8 +85,12 @@
                             </div>   
                         </div>
                         <div class="button-bottom">
-                            <a href="/course/{{$item->id}}" class="button-default">Buy Now</a>
+                            <a href="/course/{{$item->id}}" class="button-default">Detail</a>
+                            @if (Auth::check())
+                            <a href="/payment/{{$item->id}}" class="button-default">Buy Now</a>
+                            @endif
                         </div>
+
                     </div>
                 </div>
             @endforeach

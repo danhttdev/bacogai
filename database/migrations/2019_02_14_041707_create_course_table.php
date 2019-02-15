@@ -19,6 +19,8 @@ class CreateCourseTable extends Migration
             $table->string('name');
             $table->string('teacher');
             $table->text('description');
+            $table->integer('price')->unsigned()->nullable();
+
             $table->integer('status')->default(1);
 
             $table->foreign('user_id')
