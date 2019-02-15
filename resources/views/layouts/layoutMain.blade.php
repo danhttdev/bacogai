@@ -129,16 +129,7 @@
                                     <nav>
                                         <ul id="nav">
                                             <li class="current"><a href="index-2.html">Home</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="index-3.html">Homepage Version 2</a></li>
-                                                </ul>
                                             </li>
-                                            <li><a href="courses.html">Courses</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="courses-details.html">Courses Details</a></li>
-                                                </ul>
-                                            </li>
-                                    
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
