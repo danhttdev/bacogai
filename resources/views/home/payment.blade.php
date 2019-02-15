@@ -41,7 +41,7 @@
               </div>
           </div>
           <div class="button" style="margin-left: -30px;  margin-bottom: 50px;">
-               <button   style="margin: 0 auto; font-size:25px;" type="submit">Confirm and Pay</button>
+               <a href="/"><button   style="margin: 0 auto; font-size:25px;" type="submit">Confirm and Pay</button></a>
            </div>
       </div>
      

@@ -29,7 +29,7 @@
                      </div>
                      <div class="col-md-6">
                         <div class="single-item-text">
-                           <h4>{{$detail->name}}</h4>
+                           <h4  style="min-height:100px;">{{$detail->name}}</h4>
                            <div class="single-item-text-info">
                               <span>By: <span>{{$detail->teacher}}</span></span>
                               <span>Date: <span>{{ date_format($detail->created_at, 'd-M-Y')}}</span></span>
@@ -64,7 +64,7 @@
                         <source src="{{$videos[0]->link}}" type="video/mp4">
                   </video>  --}}
 
-                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/capHNO_iMIU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" height="315" src="{{$videos[0]->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                   <br />
 

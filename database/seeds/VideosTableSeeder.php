@@ -15,14 +15,14 @@ class VideosTableSeeder extends Seeder
             [
             'title'         => 'Trailer',
             'course_id'     => 1,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/Wh-HoCbInao',
             'order'         => 0
         ]);
         DB::table('videos')->insert(
             [
             'title'         => 'Introduction',
             'course_id'     => 1,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/Wh-HoCbInao',
             'order'         => 1
         ]);
         DB::table('videos')->insert(
@@ -46,21 +46,21 @@ class VideosTableSeeder extends Seeder
             [
             'title'         => 'Trailer',
             'course_id'     => 2,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/w6JFRi0Qm_s',
             'order'         => 0
         ]);
         DB::table('videos')->insert(
             [
-            'title'         => 'Introduction',
+            'title'         => 'Introduction for student',
             'course_id'     => 2,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/w6JFRi0Qm_s',
             'order'         => 1
         ]);
         DB::table('videos')->insert(
             [
             'title'         => 'Beginner',
             'course_id'     => 2,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/gIkMNn-A_Y4',
             'order'         => 2
         ]);
         DB::table('videos')->insert(
@@ -78,19 +78,19 @@ class VideosTableSeeder extends Seeder
             [
             'title'         => 'Trailer',
             'course_id'     => 3,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/9gD0K7oH92U',
             'order'         => 0
         ]);
         DB::table('videos')->insert(
             [
-            'title'         => 'Introduction',
+            'title'         => 'Introduction, Documentation',
             'course_id'     => 3,
-            'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
+            'link'          => 'https://www.youtube.com/embed/gIkMNn-A_Y4',
             'order'         => 1
         ]);
         DB::table('videos')->insert(
             [
-            'title'         => 'Beginner',
+            'title'         => 'Beginner, Preparing',
             'course_id'     => 3,
             'link'          => 'https://www.youtube.com/embed/capHNO_iMIU',
             'order'         => 2

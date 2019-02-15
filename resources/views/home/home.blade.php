@@ -22,7 +22,7 @@
                             <a href="#"><img src="img/course/1.jpg" alt=""></a>
                         </div>
                         <div class="single-item-text">
-                            <h4><a href="#">{{$item->name}}</a></h4>
+                            <h4><a href="/course/{{$item->id}}">{{$item->name}}</a></h4>
                             <div class="single-item-text-info">
                                 <span>By: <span>{{ $item->teacher}}</span></span>
                                 <span>Date: <span>{{ date_format($item->created_at, 'd-M-Y')}}</span></span>
