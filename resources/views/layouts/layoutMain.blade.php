@@ -119,7 +119,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-12">
                             <div class="logo">
-                                <a href="#"><img src="{{ asset('/template/img/logo/logo.png') }}" alt="EDUCAT"></a>
+                                <a href="/"><img src="{{ asset('/template/img/logo/logo.png') }}" alt="EDUCAT"></a>
                             </div>
                         </div>
                         <div class="col-md-9 hidden-sm hidden-xs">
@@ -127,7 +127,7 @@
                                 <div class="mainmenu">
                                     <nav>
                                         <ul id="nav">
-                                            <li class="current"><a href="#">Home</a>
+                                            <li class="current"><a href="/">Home</a>
                                             </li>
                                             <li><a href="#">Contact</a></li>
                                         </ul>
