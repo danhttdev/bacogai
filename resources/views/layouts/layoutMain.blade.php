@@ -61,6 +61,7 @@
 		<!-- Responsive CSS
 		============================================ -->
         <link rel="stylesheet" href="{{ asset('template/css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/custome.css') }}">
         
 		<!-- Modernizr JS
 		============================================ -->		
@@ -80,7 +81,13 @@
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
                             <div class="header-top-right">
-                                <div class="content"><a href="#"><i class="zmdi zmdi-account"></i> My Account</a>
+                                <div class="content"><a href="#"><i class="zmdi zmdi-account"></i>
+                                    @if (!Auth::check())
+                                        My Account
+                                    @else 
+                                        Hello {{ Auth::user()->name }}
+                                    @endif
+                                    </a>
                                     <ul class="account-dropdown">
                                         @if (!Auth::check())
                                             <li><a href="{{ route('login') }}">Log In</a></li>

@@ -32,7 +32,7 @@
                             <div class="footer-logo">
                                 <a href="index-2.html"><img src="img/logo/footer.png" alt=""></a>
                             </div>
-                            <p>There are many variations of passg of Lorem Ipsum available, but thmajority have suffered altem, </p>
+                            <p>Welcome to our English course, </p>
                             <div class="social-icons">
                                 <a href="#"><i class="zmdi zmdi-facebook"></i></a>
                                 <a href="#"><i class="zmdi zmdi-rss"></i></a>
@@ -45,10 +45,10 @@
                     <div class="col-md-3 col-sm-4">
                         <div class="single-footer-widget">
                             <h3>GET IN TOUCH</h3>
-                            <span><i class="fa fa-phone"></i>+88 018 785 4589</span>
-                            <span><i class="fa fa-envelope"></i>devitems@email.com</span>
-                            <span><i class="fa fa-globe"></i>www.devitems.com</span>
-                            <span><i class="fa fa-map-marker"></i>ur address goes here,street.</span>
+                            <span><i class="fa fa-phone"></i>0123456789</span>
+                            <span><i class="fa fa-envelope"></i>BaCoGaiTeam@email.com</span>
+                            <span><i class="fa fa-globe"></i>www.BaCoGaiTeam.com</span>
+                            <span><i class="fa fa-map-marker"></i>Nguyen Luong Bang, Da Nang</span>
                         </div>
                     </div>
                     <div class="col-md-3 hidden-sm">
@@ -98,7 +98,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-7">
-                        <span>Copyright &copy; EDUCAT 2016.All right reserved.Created by <a href="#">Devitems</a></span>
+                        <span>Copyright &copy; ECM English Course Management. All right reserved.Created by <a href="#">Bacogai Team BKDN K15</a></span>
                     </div>
                     <div class="col-md-6 col-sm-5">
                         <div class="column-right">

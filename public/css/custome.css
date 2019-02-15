@@ -1,0 +1,11 @@
+.single-item-text h4{
+    height: 50px;
+}
+
+.single-item-text p{
+    min-height: 350px;
+}
+
+.single-item{
+    margin-bottom: 30px;
+}

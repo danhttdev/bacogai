@@ -9,16 +9,13 @@
                 <div class="section-title-wrapper">
                     <div class="section-title" >
                         <h3 style="margin-top: 15px !important;">POPULAR COURSES</h3>
-                        <p>There are many variations of passages of Lorem Ipsum</p>
+                        <p>All couses are available in English course.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-          
-            
-
-            @foreach( $courses as $item)
+            @foreach( $courses as $key => $item)
                 <div class="col-md-4 col-sm-6">
                     <div class="single-item">
                         <div class="single-item-image overlay-effect">
@@ -33,28 +30,70 @@
                             <p>{{$item->description}}</p>
                             <div class="single-item-content">
                                 <div class="single-item-comment-view">
-                                    <span><i class="zmdi zmdi-eye"></i>59</span>
-                                    <span><i class="zmdi zmdi-comments"></i>19</span>
+                                    <span><i class="zmdi zmdi-face"></i>{{$numOfUserRegister[$key]}} students</span>
                                 </div>
                                 <div class="single-item-rating">
-                                    <i class="zmdi zmdi-star"></i>
-                                    <i class="zmdi zmdi-star"></i>
-                                    <i class="zmdi zmdi-star"></i>
-                                    <i class="zmdi zmdi-star"></i>
-                                    <i class="zmdi zmdi-star-half"></i>
+                                    {{$ratings[$key]}}
+
+                                    @if ($ratings[$key] == 0)
+                                        star
+                                    @elseif ($ratings[$key] < 0.5)
+                                        star
+                                    @elseif ($ratings[$key] < 1)
+                                        <i class="zmdi zmdi-star-half"></i>
+                                    @elseif ($ratings[$key] < 1.5)
+                                        <i class="zmdi zmdi-star"></i>
+                                    @elseif ($ratings[$key] < 2)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star-half"></i>
+                                    @elseif ($ratings[$key] < 2.5)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                    @elseif ($ratings[$key] < 3)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star-half"></i>
+                                    @elseif ($ratings[$key] < 3.5)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                    @elseif ($ratings[$key] < 4)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star-half"></i>
+                                    @elseif ($ratings[$key] < 4.5)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                    @elseif ($ratings[$key] < 5)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star-half"></i>
+                                    @else ($ratings[$key] < 5)
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                    @endif
+
                                 </div>
                             </div>   
                         </div>
                         <div class="button-bottom">
-                            <a href="#" class="button-default">Buy Now</a>
+                            <a href="/course/{{$item->id}}" class="button-default">Buy Now</a>
                         </div>
                     </div>
                 </div>
             @endforeach
           
-            <div class="col-md-12 col-sm-12 text-center">
+            {{--  <div class="col-md-12 col-sm-12 text-center">
                 <a href="#" class="button-default button-large">Browse All Courses <i class="zmdi zmdi-chevron-right"></i></a>
-            </div>
+            </div>  --}}
         </div>
     </div>
 </div>

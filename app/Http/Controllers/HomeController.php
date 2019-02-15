@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Usercourse;
 class HomeController extends Controller
 {
     /**
@@ -24,9 +25,15 @@ class HomeController extends Controller
     public function index()
     {
         $list = Course::all();
-        // exit(json_encode($list));
+        foreach ($list as $key => $value) {
+            $numOfUserRegister[] = Usercourse::where('id_course', $value->id)->get()->count();
+            $sum = Usercourse::where('id_course', $value->id)->whereNotNull('rate')->get()->sum('rate');
+            $count = Usercourse::where('id_course', $value->id)->whereNotNull('rate')->get()->count();
 
-        return view('home.home', ["courses"=>$list]);
+            if($count != 0) $ratings[] = round($sum/$count, 1);
+            else $ratings[] = 0;
+        }
+        return view('home.home', ["courses"=>$list, "numOfUserRegister"=>$numOfUserRegister, 'ratings'=>$ratings]);
     }
 
     public function test()
@@ -34,5 +41,9 @@ class HomeController extends Controller
         // return view('layouts.layoutMain');
         return view('home.home');
         // return view('layouts.layoutUser');
+    }
+
+    public function course($id){
+        return view('home.course');
     }
 }
