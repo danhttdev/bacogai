@@ -1,7 +1,7 @@
 @include('layouts.layoutMain')
 
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container" >
+    <div class="row justify-content-center" style="margin-bottom: 30px;">
         <div class="col-md-3"></div>
 
         <div class="col-md-6">
@@ -84,3 +84,4 @@
         </div>
     </div>
 </div>
+@include('layouts.layoutMainFooter')

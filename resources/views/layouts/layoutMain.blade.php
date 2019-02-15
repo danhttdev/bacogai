@@ -81,20 +81,19 @@
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
                             <div class="header-top-right">
-                                <div class="content"><a href="#"><i class="zmdi zmdi-account"></i>
+                                <div class="content">
                                     @if (!Auth::check())
-                                        My Account
-                                    @else 
-                                        Hello {{ Auth::user()->name }}
+                                        <a href="{{ route('login') }}">  Login
+
+                                    @else
+                                        <a href="#"><i class="zmdi zmdi-account">   Hello {{ Auth::user()->name }}</i>
+
                                     @endif
                                     </a>
+                                    @if (Auth::check())
                                     <ul class="account-dropdown">
-                                        @if (!Auth::check())
-                                            <li><a href="{{ route('login') }}">Log In</a></li>
-                                            <li><a href="{{ route('register') }}">Register</a></li>
-                                        
-                                        @else
-                                            <li><a href="#">Hello {{ Auth::user()->name }}</a></li>
+
+                                            <li><a href="#">Profile</a></li>
                                            
                                             <li><a class="dropdown-item" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
@@ -120,7 +119,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-12">
                             <div class="logo">
-                                <a href="/"><img src="{{ asset('/template/img/logo/logo.png') }}" alt="EDUCAT"></a>
+                                <a href="#"><img src="{{ asset('/template/img/logo/logo.png') }}" alt="EDUCAT"></a>
                             </div>
                         </div>
                         <div class="col-md-9 hidden-sm hidden-xs">
@@ -128,9 +127,9 @@
                                 <div class="mainmenu">
                                     <nav>
                                         <ul id="nav">
-                                            <li class="current"><a href="index-2.html">Home</a>
+                                            <li class="current"><a href="#">Home</a>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="#">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>

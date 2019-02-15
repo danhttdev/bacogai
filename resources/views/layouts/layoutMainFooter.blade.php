@@ -69,22 +69,22 @@
                             <h3>Instagram</h3>
                             <div class="instagram-image">
                                 <div class="footer-img">
-                                    <a href="#"><img src="img/footer/1.jpg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('template/img/footer/1.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="#"><img src="img/footer/2.jpg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('template/img/footer/2.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="#"><img src="img/footer/3.jpg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('template/img/footer/3.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="#"><img src="img/footer/4.jpg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('template/img/footer/4.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="#"><img src="img/footer/5.jpg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('template/img/footer/5.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="footer-img">
-                                    <a href="#"><img src="img/footer/6.jpg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('template/img/footer/6.jpg') }}" alt=""></a>
                                 </div>
                             </div>
                         </div>
